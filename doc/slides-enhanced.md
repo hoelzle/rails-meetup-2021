@@ -26,7 +26,6 @@ Gregor Wassmann
 
 <!-- slide -->
 
-
 ![bg](https://assets.hoelzle.ch/image/upload/ar_16:9,c_lfill,dpr_2.0,f_auto,g_custom:face,w_450/iStock-1069742886)
 
 <!-- slide -->
@@ -192,6 +191,11 @@ digraph g1 {
 
 https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity
 
+
+<!-- slide -->
+
+https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4
+
 <!-- slide -->
 
 # Rails Engine
@@ -282,6 +286,10 @@ digraph G {
 }
 ```
 
+<!-- slide -->
+
+Mono vs Momo
+
 
 <!-- slide -->
 
@@ -312,8 +320,8 @@ digraph G {
 # Why API?
 
 1. Separation of concerns
-1. Multiple clients
-1. Offline clients
+1. Different kinds of clients
+1. Offline / native clients
 1. Technological independence / decoupling
 1. Standards such as JsonAPI
 1. Every developer knows what it is
