@@ -1,4 +1,4 @@
-module Decorators
+
   class Collection < SimpleDelegator
     include Enumerable
     delegate :each, to: :decorated
@@ -19,4 +19,3 @@ module Decorators
       end
     end
   end
-end

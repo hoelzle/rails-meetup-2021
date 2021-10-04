@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Decorators::Price do
+RSpec.describe Price do
   subject(:decorated) { described_class.new product, customer }
 
   let(:product) { create :product, code: code, price: 100 }

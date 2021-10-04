@@ -1,5 +1,5 @@
-module Decorators
-  class RegularPrice < Decorators::Context
+
+  class RegularPrice < Context
     using DiscountFactor
     alias customer context
 
@@ -15,4 +15,3 @@ module Decorators
       code.discount customer.discount
     end
   end
-end

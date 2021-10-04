@@ -1,5 +1,5 @@
-module Decorators
-  class Price < Decorators::Context
+
+  class Price < Context
     alias customer context
     delegate :name, to: :code, prefix: true
 
@@ -18,7 +18,7 @@ module Decorators
     private
 
     def price_classes
-      [Decorators::RegularPrice]
+      [RegularPrice]
     end
 
     def prices
@@ -31,4 +31,3 @@ module Decorators
       end
     end
   end
-end

@@ -1,4 +1,4 @@
-module Decorators
+
   class Context < SimpleDelegator
     attr_reader :context
 
@@ -7,4 +7,3 @@ module Decorators
       @context = context
     end
   end
-end
