@@ -8,6 +8,4 @@ gemspec
 group :development, :test do
   gem 'pg'
   gem 'byebug'
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
 end

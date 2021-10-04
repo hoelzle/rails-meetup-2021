@@ -1,3 +1,9 @@
+PATH
+  remote: engines/core
+  specs:
+    core (0.1.0)
+      rails (~> 6.1.4, >= 6.1.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,6 +219,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  core!
   factory_bot_rails
   listen
   multi_json
