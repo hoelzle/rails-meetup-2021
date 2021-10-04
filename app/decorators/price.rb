@@ -1,33 +1,26 @@
+class Price < Context
+  alias customer context
+  delegate :name, to: :code, prefix: true
 
-  class Price < Context
-    alias customer context
-    delegate :name, to: :code, prefix: true
+  delegate :price, to: :lowest
 
-    def price
-      lowest.price
-    end
+  delegate :net_price, to: :lowest
 
-    def net_price
-      lowest.net_price
-    end
+  delegate :discount, to: :lowest
 
-    def discount
-      lowest.discount
-    end
+  private
 
-    private
+  def price_classes
+    [RegularPrice]
+  end
 
-    def price_classes
-      [RegularPrice]
-    end
+  def prices
+    @prices ||= price_classes.map { |price| price.new __getobj__, customer }
+  end
 
-    def prices
-      @prices ||= price_classes.map { |price| price.new __getobj__, customer }
-    end
-
-    def lowest
-      @lowest ||= prices.reduce do |lowest, other|
-        other.net_price < lowest.net_price ? other : lowest
-      end
+  def lowest
+    @lowest ||= prices.reduce do |lowest, other|
+      other.net_price < lowest.net_price ? other : lowest
     end
   end
+end

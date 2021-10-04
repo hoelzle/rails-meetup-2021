@@ -1,7 +1,7 @@
 class Code < ApplicationRecord
   self.primary_key = :name
 
-  has_many :products, foreign_key: :code_name, inverse_of: :code
+  has_many :products, foreign_key: :code_name, inverse_of: :code # rubocop:disable Rails/HasManyOrHasOneDependent
   validates :name, uniqueness: true
   enum kind: { basic: 1, maximal: 2, actual: 3 }
 
