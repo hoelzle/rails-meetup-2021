@@ -4,9 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in core.gemspec.
 gemspec
 
-group :development do
-  gem 'sqlite3'
-end
-
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+group :development, :test do
+  gem 'pg'
+  gem 'byebug'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+end
