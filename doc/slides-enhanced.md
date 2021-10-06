@@ -23,6 +23,7 @@ presentation:
 
 Hoelzle AG
 Gregor Wassmann
+<small>MSc ETH</small>
 
 <!-- slide -->
 
@@ -55,6 +56,27 @@ Bonus: Best of Rails _and_ JavaScript
 <!-- slide -->
 
 # Entropy
+
+<!-- slide -->
+
+![bg](pragprog.jpg)
+
+<!-- slide -->
+
+> While software development is immune from almost all physical laws, the inexorable increase in entropy hits us hard. Entropy is a term from physics that refers to the amount of “disorder” in a system.
+
+— David Thomas, Andrew Hunt.
+The Pragmatic Programmer.
+
+<!-- slide -->
+
+## Entropy always increases
+
+Second law of thermodynamics.
+
+<!-- slide -->
+
+Thought experiment
 
 <!-- slide -->
 
@@ -189,6 +211,10 @@ digraph g1 {
 
 <!-- slide -->
 
+You’re in good company.
+
+<!-- slide -->
+
 https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity
 
 
@@ -199,6 +225,50 @@ https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826
 <!-- slide -->
 
 # Rails Engine
+
+<!-- slide -->
+
+
+```
+ rails plugin new ./engines/core --full
+ rails plugin new ./engines/api --mountable
+```
+<!-- options: --dummy-path=spec/dummy -TJMCSG -->
+
+<!-- slide -->
+
+`spec/dummy` is your friend
+
+<!-- slide -->
+
+```
+rails app:railties:install:migrations
+```
+
+<!-- slide -->
+
+**don’t do this**
+
+<!-- slide -->
+
+```ruby
+# Source: https://tanzu.vmware.com/content/blog/leave-your-migrations-in-your-rails-engines
+initializer :append_migrations do |app|
+  unless app.root.to_s.match root.to_s
+    config.paths['db/migrate'].expanded.each do |path|
+      app.config.paths['db/migrate'] << path
+    end
+  end
+end
+```
+
+<!-- slide -->
+
+# Webpacker
+
+<!-- slide -->
+
+Ask @coorasse
 
 <!-- slide -->
 
@@ -288,14 +358,140 @@ digraph G {
 
 <!-- slide -->
 
-Mono vs Momo
+- 1 repo
+- 1 CI
+- 1 deployment (Heroku)
+- different stacks
+- `clients/crm`
+- `public/crm ../../clients/crm/dist`
+
+<!-- slide -->
+
+Works with Rails 0.5
+
+<!-- slide -->
+
+RSpec and FactoryBot.
+End-to-end testing.
+
+<!-- slide -->
+
+```dot
+digraph {
+  labelloc = top
+  bgcolor = transparent
+  // color = white
+  // fontcolor=white
+  // fontname=helvetica
+
+  node [
+    fontname=helvetica,
+    fontsize=20,
+    color=white,
+    fontcolor=white,
+    shape=box
+    border=3
+  ];
+
+  edge [
+    color=white
+  ];
+
+  node []
+  DB [shape=cylinder]
+
+  Shop -> API
+  App -> API
+  CRM -> API
+  API -> DB
+}
+```
 
 
 <!-- slide -->
 
+```dot
+digraph G {
+    labelloc = top
+  bgcolor = transparent
+  color = white
+  // fontcolor=white
+  // fontname=helvetica
+
+  node [
+    fontname=helvetica,
+    fontsize=20,
+    color=white,
+    fontcolor=white,
+    shape=box
+    border=3
+  ];
+
+  edge [
+    color=white
+  ];
+  // Used for connecting clusters.
+  // See https://stackoverflow.com/questions/2012036/graphviz-how-to-connect-subgraphs
+  compound = true
+  // Totöe / label at the top
+  labelloc = top
+  node [shape=box]
+  DB [shape=cylinder]
+
+  subgraph cluster_mono {
+    label = "Modular Monolith"
+    fontcolor = white
+    fontname=helvetica
+    fontsize=20
+
+
+    CRM -> API
+    EDI -> Core
+    Shop -> API
+    API -> Core
+  }
+
+  App -> API
+  Core -> DB [ltail=cluster_mono]
+}
+
+```
+
+<!-- slide -->
+
+# Momo
+
+Modular Monolith
+
+<!-- slide -->
+
+![bg](api.png)
+
+<!-- slide -->
+
+![bg](shop.png)
+
+<!-- slide -->
+
+![bg](crm.png)
+
+<!-- slide -->
+
+There is no right or wrong.
+Be pragmatic.
+
+<!-- slide -->
+
+Questions?
+
+<!-- slide -->
+
+Thanks
+
+<!-- slide -->
 # TODO
 
-- [ ] Core engine
+- [x] Core engine
 - [ ] API engine
 - [ ] JS / Svelte client
 - [ ] Administrate
