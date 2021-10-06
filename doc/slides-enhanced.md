@@ -264,6 +264,16 @@ end
 
 <!-- slide -->
 
+```ruby
+Rails.application.routes.draw do
+  mount EDI::Engine => '/edi'
+  mount API::Engine => '/api'
+  mount Shop::Engine => '/'
+end
+```
+
+<!-- slide -->
+
 # Webpacker
 
 <!-- slide -->
@@ -363,7 +373,7 @@ digraph G {
 - 1 deployment (Heroku)
 - different stacks
 - `clients/crm`
-- `public/crm ../../clients/crm/dist`
+- `public/crm ➔ ../../clients/crm/dist`
 
 <!-- slide -->
 
