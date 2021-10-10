@@ -27,3 +27,4 @@ group :test do
 end
 
 gem 'core', path: './engines/core'
+gem 'api', path: './engines/api'
