@@ -2,7 +2,7 @@ require_relative "lib/api/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "api"
-  spec.version     = Api::VERSION
+  spec.version     = API::VERSION
   spec.authors     = ["Gregor Wassmann"]
   spec.email       = ["gregor@hoelzle.ch"]
   spec.homepage    = "https://www.github.com/hoelzle"

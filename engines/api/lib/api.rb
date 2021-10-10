@@ -1,6 +1,6 @@
 require "api/version"
 require "api/engine"
 
-module Api
+module API
   # Your code goes here...
 end

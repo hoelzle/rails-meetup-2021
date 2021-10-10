@@ -1,5 +1,5 @@
-module Api
+module API
   class Engine < ::Rails::Engine
-    isolate_namespace Api
+    isolate_namespace API
   end
 end

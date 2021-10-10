@@ -1,2 +1,2 @@
-Api::Engine.routes.draw do
+API::Engine.routes.draw do
 end

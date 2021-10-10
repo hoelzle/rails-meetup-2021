@@ -1,4 +1,4 @@
-# Api
+# API
 Short description and motivation.
 
 ## Usage
