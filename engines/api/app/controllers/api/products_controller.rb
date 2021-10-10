@@ -1,3 +1,4 @@
+module API
 class ProductsController < ApplicationController
   def show
     render json: product
@@ -16,4 +17,5 @@ class ProductsController < ApplicationController
   def products
     @products ||= Product.all
   end
+end
 end

@@ -1,3 +1,4 @@
+module API
 class DecoratedProductsController < ProductsController
   def show
     @decorated_product = Price.new product, customer
@@ -18,4 +19,5 @@ class DecoratedProductsController < ProductsController
   def permitted_params
     params.permit :id, :customer_id
   end
+end
 end
