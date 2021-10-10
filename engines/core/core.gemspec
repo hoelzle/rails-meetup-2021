@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/hoelzle/rails-meetup-2020"
-  spec.metadata["changelog_uri"] = "https://github.com/hoelzle/rails-meetup-2020"
+  spec.metadata["source_code_uri"] = "https://github.com/hoelzle/rails-meetup-2021"
+  spec.metadata["changelog_uri"] = "https://github.com/hoelzle/rails-meetup-2021"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
@@ -24,5 +24,4 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'factory_bot_rails'
   spec.add_development_dependency 'rspec-rails'
-
 end
