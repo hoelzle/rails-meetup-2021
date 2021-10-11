@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "clients/shop – happy path", type: :system do
   before do
-    driven_by(:selenium_headless)
+    driven_by(:selenium_chrome)
   end
 
-  let!(:prodcut) { create :product }
+  let!(:product) { create :product }
 
   it 'shows products' do
-    visit '/shop'
+    visit '/clients/shop/'
 
-    expect(page).to have_text product.name
+    expect(page).to have_text 'HELLO'
   end
 end

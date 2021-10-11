@@ -27,4 +27,5 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'core', path: './engines/core'
 gem 'api', path: './engines/api'
