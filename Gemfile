@@ -22,7 +22,9 @@ end
 
 group :test do
   gem 'simplecov', require: false
+  gem 'core', path: './engines/core'
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
-gem 'core', path: './engines/core'
 gem 'api', path: './engines/api'
