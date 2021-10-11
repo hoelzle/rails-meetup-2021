@@ -2,11 +2,9 @@ source 'https://rubygems.org'
 
 ruby File.read('.ruby-version')
 
-gem 'multi_json'
 gem 'pg'
 gem 'puma'
 gem 'rails'
-gem 'representable'
 
 group :development, :test do
   gem 'byebug'

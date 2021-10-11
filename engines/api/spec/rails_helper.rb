@@ -65,4 +65,5 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.include API::Engine.routes.url_helpers, type: :request
+  config.include Helpers::Request, type: :request
 end
